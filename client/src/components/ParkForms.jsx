@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Forms = () => {
   return (
     <div>
-        <Link>Home</Link>
+        <Link>Add Theme Park</Link>
     </div>
   )
 }
-export default Navbar
+export default Forms
