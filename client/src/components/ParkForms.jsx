@@ -22,17 +22,18 @@ const ParkForms = () => {
     setFormState(initialState)
     await navigate('/')
   }
-  function ValidButton() {
-    if (formState.name) {
-      return (
-        <button type="submit" className="validButton">
-          Create New Park
-        </button>
-      )
-    } else {
-      return <h3>Park name is required</h3>
-    }
+
+  let validButton = ''
+  if (formState.name) {
+    validButton = (
+      <button type="submit" className="validButton">
+        Create New Park
+      </button>
+    )
+  } else {
+    validButton = <h3>Park name is required</h3>
   }
+
   return (
     <div>
       <form onSubmit={handleSubmit} className="form">
@@ -49,17 +50,16 @@ const ParkForms = () => {
           id="location"
           type="text"
           onChange={handleChange}
-          value={formState.name}
+          value={formState.location}
         />
         <input
           placeholder="Picture URL:"
           id="picture_url"
           type="text"
           onChange={handleChange}
-          value={formState.name}
+          value={formState.picture_url}
         />
-
-        <ValidButton />
+        {validButton}
       </form>
     </div>
   )
