@@ -1,8 +1,10 @@
-const Home = () => {
+import { Link } from 'react-router-dom'
+
+const Home = ({getAllParks}) => {
   return (
     <div>
-      
-      </div>
+      All Parks
+    </div>
   )
 }
 export default Home
