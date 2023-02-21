@@ -2,25 +2,37 @@ import { useState, useEffect } from 'react'
 import Home from './Home'
 import axios from 'axios'
 
-const ParkDetails = (park) => {
-  //     const [rides, setRides] = useState('')
+const ParkDetails = () => {
+      const [rides, setRides] = useState('')
+      const [park, setPark] = useState('')
 
-  // const deletePark = async () => {
-  //         await axios.delete(`/delete-park/${park._id}`)
-  //      }
 
+  const deletePark = async () => {
+          await axios.delete(`/delete-park/${park._id}`)
+       }
+  const getOnePark = async () => {
+         const response = await axios.get(`/api/get-park/63f52e617a6e913b979cee84`)
+          setPark(response.data.park)
+          console.log(response);
+  }
+  useEffect(() =>{
+    getOnePark()
+  },[])
+         
   return (
     <div>
-      {/* <button onClick={deletePark}>Delete Park</button> */}
-      {
-        //     rides && (rides.map((oneRide) => (
-        //         <div key={oneRide._id} className='card'>
-        //             <p>{oneRide.name}</p>
-        //             <p>{oneRide.runTime}</p>
-        //             <button className='delete' id='deleteRide' onClick={() => deleteRide(oneRide)}>Delete Ride</button>
-        //         </div>
-        //     )))
-      }
+      <div>
+      {park &&      
+      park.rides.map((oneRide) => (
+                <div key={oneRide._id} className='card'>
+                    <p>{oneRide.name}</p>
+                    <p>{oneRide.runTime}</p>
+                    {/* <button className='delete' id='deleteRide' onClick={() => deleteRide(oneRide)}>Delete Ride</button> */}
+                </div>
+            ))}
+      </div>
+      
+      <button onClick={deletePark}>Delete Park</button>
     </div>
   )
 }

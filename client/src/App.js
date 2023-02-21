@@ -16,7 +16,7 @@ function App() {
           <Route path="/create-park" element={<ParkForms />} />
         </Routes>
       </main>
-
+{<ParkDetails/>}
     </div>
   )
 }
