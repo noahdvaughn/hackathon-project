@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div>
-        <Link>Home</Link>
+        <Link >Home</Link>
     </div>
   )
 }
