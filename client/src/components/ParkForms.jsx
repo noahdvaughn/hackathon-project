@@ -9,7 +9,6 @@ const ParkForms = () => {
     name: '',
     location: '',
     picture_url: ''
-
   }
   const [formState, setFormState] = useState(initialState)
   const handleChange = (event) => {
