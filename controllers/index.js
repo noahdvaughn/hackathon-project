@@ -41,10 +41,23 @@ const deletePark = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getParkById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const player = await Park.findById(id)
+    if (park) {
+      return res.status(200).json({ park })
+    }
+    return res.status(404).send('Park with the specified ID does not exists')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 module.exports = {
   createPark,
   getAllParks,
   editPark,
-  deletePark
+  deletePark,
+  getParkById
 }
