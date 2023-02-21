@@ -3,11 +3,15 @@ import Home from './Home'
 import axios from 'axios'
 
 const ParkDetails = () => {
-    const [rides, setRides] = useState([])
+    const [rides, setRides] = useState('')
 
+    // const deletePark = async () => {
+    //         await axios.delete(`/delete-park/${park._id}`)
+    //      }
     // getPark();
   return (
     <div>
+      {/* <button onClick={deletePark}>Delete Park</button>  */}
        {
 //     rides && (rides.map((oneRide) => (
 //         <div key={oneRide._id} className='card'>
