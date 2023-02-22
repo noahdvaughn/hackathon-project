@@ -27,6 +27,10 @@ h3{
   align-items: center;
 }
 
+a.homeLink{
+  text-decoration: none;
+}
+
 /* ----------- Google Pixel ----------- */
 
 /* Portrait */
