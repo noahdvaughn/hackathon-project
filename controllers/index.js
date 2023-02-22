@@ -1,4 +1,5 @@
 const Park = require('../models/park')
+const Ride = require('../models/park')
 
 const createPark = async (req, res) => {
   try {
@@ -6,6 +7,17 @@ const createPark = async (req, res) => {
     await park.save()
     return res.status(201).json({
       park
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+const createRide = async (req, res) => {
+  try {
+    const ride = await new Ride(req.body)
+    await ride.save()
+    return res.status(201).json({
+      ride
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
@@ -59,5 +71,6 @@ module.exports = {
   getAllParks,
   editPark,
   deletePark,
-  getParkById
+  getParkById,
+  createRide
 }
