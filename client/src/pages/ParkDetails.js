@@ -5,8 +5,21 @@ import axios from 'axios'
 const ParkDetails = () => {
       const [rides, setRides] = useState('')
       const [park, setPark] = useState('')
-
-
+      const [updatePark, setUpdatePark] = useState()
+      const [newRide, setNewRide] = useState({
+        name:'', runtime:''
+      })
+//when able to pass props will pass park into parkDetails and updateRide useState
+console.log(park);
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await axios.post(`/api/create-ride/${park._id}`, newRide)
+  }
+  const handleChange = (event) => {
+    setNewRide(
+      {...newRide, [event.target.id]: event.target.value}
+    )
+  }
   const deletePark = async () => {
           await axios.delete(`/delete-park/${park._id}`)
        }
@@ -38,7 +51,21 @@ const ParkDetails = () => {
                 </div>
             ))}
       </div>
-      
+      <form onSubmit={(e) => handleSubmit(e, updatePark._id)}>
+          <input  
+            name='name'
+            value={newRide.name}
+            type='text'
+            placeholder='Name'
+            onChange={handleChange}/>
+            <input  
+            name='runtime'
+            value={newRide.runtime}
+            type='text'
+            placeholder='runtime'
+            onChange={handleChange}/>
+            <button>Add Ride</button>
+      </form>
       <button onClick={deletePark}>Delete Park</button>
     </div>
   )
