@@ -1,24 +1,31 @@
 import { useState, useEffect } from 'react'
 import Home from './Home'
 import axios from 'axios'
+import { useLocation } from 'react-router-dom'
 
-const ParkDetails = ({ park }) => {
+
+const ParkDetails = ( ) => {
+
+  const location = useLocation()
+  const { park } = location.state
   console.log(park);
       // const [rides, setRides] = useState('')
       // const [park, setPark] = useState('')
-      const [updatePark, setUpdatePark] = useState()
+      const [updatePark, setUpdatePark] = useState([])
       const [newRide, setNewRide] = useState({
-        name:'', runtime:''
+        name:'', runtime:'', park_id:park._id
       })
 //when able to pass props will pass park into parkDetails
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     await axios.post(`/api/create-ride/${park._id}`, newRide)
+    console.log(park);
+    await axios.get(`/api/get-ride-by-park-id/${park._id}`)
   }
   const handleChange = (event) => {
     setNewRide(
-      {...newRide, [event.target.id]: event.target.value}
+      {...newRide, [event.target.name]: event.target.value}
     )
   }
   const deletePark = async () => {
@@ -43,7 +50,7 @@ const ParkDetails = ({ park }) => {
   return (
     <div>
       <div>
-      {park &&      
+      {park.ride &&      
       park.ride.map((oneRide) => (
                 <div key={oneRide._id} className='card'>
                     <p>{oneRide.name}</p>

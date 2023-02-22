@@ -25,7 +25,7 @@ const Home = () => {
         allParks.map((park) => (
           <div>
             <Link
-              to={`/api/parkdetails/${park._id}`}
+              to={`/parkdetails/${park._id}`}
               key={park._id}
               state={{ park: park }}
             >
