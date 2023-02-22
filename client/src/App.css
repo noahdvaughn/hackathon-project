@@ -6,7 +6,6 @@
   border-bottom: solid #33b2dc ;
   height: 8vh;
   transition: all 0.4s;
-
 }
 .navbar:hover{
   height: 10vh;
