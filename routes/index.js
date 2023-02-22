@@ -9,5 +9,6 @@ router.get('/all-parks', controllers.getAllParks)
 router.put('/edit-park/:id', controllers.editPark)
 router.delete('/delete-park/:id', controllers.deletePark)
 router.get('/get-park/:id', controllers.getParkById)
+router.get('/get-ride-by-park-id/:id', controllers.getRideByParkId)
 
 module.exports = router
