@@ -34,13 +34,9 @@ const ParkForms = () => {
     validButton = <h3>Park name is required</h3>
   }
 
-
-
-
-
   return (
     <div>
-      <form onSubmit={handleSubmit} className="form">
+      <form onSubmit={handleSubmit} className="parkForm">
         <h1 >Create Park</h1>
         <input
           placeholder="Name"
@@ -54,16 +50,15 @@ const ParkForms = () => {
           id="location"
           type="text"
           onChange={handleChange}
-          value={formState.name}
+          value={formState.location}
         />
         <input
           placeholder="Picture URL:"
           id="picture_url"
           type="text"
           onChange={handleChange}
-          value={formState.name}
+          value={formState.picture_url}
         />
-
         {validButton}
       </form>
     </div>
