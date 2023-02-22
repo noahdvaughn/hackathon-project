@@ -11,6 +11,17 @@ const createPark = async (req, res) => {
     return res.status(500).json({ error: error.message })
   }
 }
+const createRide = async (req, res) => {
+  try {
+    const ride = await new Ride(req.body)
+    await ride.save()
+    return res.status(201).json({
+      ride
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
 const getAllParks = async (req, res) => {
   try {
     const parks = await Park.find()
@@ -44,7 +55,7 @@ const deletePark = async (req, res) => {
 const getParkById = async (req, res) => {
   try {
     const { id } = req.params
-    const player = await Park.findById(id)
+    const park = await Park.findById(id)
     if (park) {
       return res.status(200).json({ park })
     }
@@ -59,5 +70,6 @@ module.exports = {
   getAllParks,
   editPark,
   deletePark,
-  getParkById
+  getParkById,
+  createRide
 }
