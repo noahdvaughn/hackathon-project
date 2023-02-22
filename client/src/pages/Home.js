@@ -23,20 +23,18 @@ const Home = () => {
     <div className="homeBody">
       {allParks &&
         allParks.map((park) => (
+          <Link
+            to={`/parkdetails/${park._id}`}
+            key={park._id}
+            state={park}
+            className="parkLink"
+          >
+            <h1>{park.name}</h1>
+            <img className="parkImage" src={`${park.picture_url}`} />
+          </Link>
+        ))}
+    </div>
 
-          <div>
-            <Link
-              to={`/parkdetails/${park._id}`}
-              key={park._id}
-              state={ park }
-            >
-              <h1>{park.name}</h1>
-              <img src={`${park.picture_url}`} />
-            </Link>
-          </div>
-    
-  ))}
-  </div>
   )
 }
 export default Home
