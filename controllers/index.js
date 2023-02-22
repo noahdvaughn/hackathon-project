@@ -44,7 +44,7 @@ const deletePark = async (req, res) => {
 const getParkById = async (req, res) => {
   try {
     const { id } = req.params
-    const player = await Park.findById(id)
+    const park = await Park.findById(id)
     if (park) {
       return res.status(200).json({ park })
     }

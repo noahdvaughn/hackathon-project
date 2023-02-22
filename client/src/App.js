@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import ParkForms from './components/ParkForms'
 
 function App() {
+
   return (
     <div>
       <Navbar />
@@ -16,9 +17,11 @@ function App() {
           <Route path="/create-park" element={<ParkForms />} />
         </Routes>
       </main>
+
 {<ParkDetails/>}
     </div>
   )
 }
+
 
 export default App
