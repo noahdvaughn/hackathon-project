@@ -20,9 +20,10 @@ const Home = () => {
   }, [])
 
   return (
-    <div>
+    <div className="homeBody">
       {allParks &&
         allParks.map((park) => (
+<<<<<<< HEAD
           <div>
             <Link
               to={`/parkdetails/${park._id}`}
@@ -33,6 +34,17 @@ const Home = () => {
               <img src={`${park.picture_url}`} />
             </Link>
           </div>
+=======
+          <Link
+            to={`/parkdetails/${park._id}`}
+            key={park._id}
+            state={{ park: park }}
+            className="parkLink"
+          >
+            <h1>{park.name}</h1>
+            <img src={`${park.picture_url}`} className="parkImage" />
+          </Link>
+>>>>>>> dea1c51b1d652b2f7b339094a16c5a55c4228714
         ))}
     </div>
   )
