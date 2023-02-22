@@ -2,15 +2,16 @@ import { useState, useEffect } from 'react'
 import Home from './Home'
 import axios from 'axios'
 
-const ParkDetails = () => {
-      const [rides, setRides] = useState('')
-      const [park, setPark] = useState('')
+const ParkDetails = ({ park }) => {
+  console.log(park);
+      // const [rides, setRides] = useState('')
+      // const [park, setPark] = useState('')
       const [updatePark, setUpdatePark] = useState()
       const [newRide, setNewRide] = useState({
         name:'', runtime:''
       })
-//when able to pass props will pass park into parkDetails and updateRide useState
-console.log(park);
+//when able to pass props will pass park into parkDetails
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     await axios.post(`/api/create-ride/${park._id}`, newRide)
@@ -25,8 +26,8 @@ console.log(park);
        }
 
   const getOnePark = async () => {
-         const response = await axios.get(`/api/get-park/63f52e617a6e913b979cee84`)
-          setPark(response.data.park)
+         const response = await axios.get(`/api/get-park/${park._id}`)
+          // setPark(response.data.park)
           console.log(response);
   }
 
