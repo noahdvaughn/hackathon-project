@@ -8,9 +8,9 @@ const ParkDetails = ( ) => {
 
   const location = useLocation()
 
-  const { park } = location.state
+  const park = location.state
 
-  console.log(park);
+  console.log(park._id);
 
       const [rides, setRides] = useState()
 
@@ -37,8 +37,10 @@ const ParkDetails = ( ) => {
   }
 
   const getRides = async () =>{
-    let res = await axios.get(`/api/get-ride-by-park-id/${park._id}`)
-    setRides(res)
+    //take out next line(http://localhost:3001)
+    let res = await axios.get(`http://localhost:3001/api/get-ride-by-park-id/${park._id}`)
+    setRides(res.data.ride)
+    console.log(rides);
   }
 
 
@@ -62,15 +64,15 @@ const ParkDetails = ( ) => {
     getRides()
     
   },[])
-  
+
   return (
     <div>
       <div>
-      {rides.data.ride &&      
-      rides.data.ride.map((oneRide) => (
+      {rides &&      
+      rides.map((oneRide) => (
                 <div key={oneRide._id} className='card'>
                     <p>{oneRide.name}</p>
-                    <p>{oneRide.runTime}</p>
+                    <p>{oneRide.runtime}</p>
                     <button className='delete' id='deleteRide' onClick={() => deleteRide(oneRide)}>Delete Ride</button>
                 </div>
             ))}

@@ -56,6 +56,7 @@ const deletePark = async (req, res) => {
 const getParkById = async (req, res) => {
   try {
     const { id } = req.params
+    
     const park = await Park.findById(id)
     if (park) {
       return res.status(200).json({ park })
@@ -67,8 +68,8 @@ const getParkById = async (req, res) => {
 }
 const getRideByParkId = async (req, res) => {
   try {
-    const { id } = req.params
-    const ride = await Ride.find({ park_id: `${id}` })
+    const { park_id } = req.params
+    const ride = await Ride.find({ park_id: `${park_id}` })
     if (ride) {
       return res.status(200).json({ ride })
     }

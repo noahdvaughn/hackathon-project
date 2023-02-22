@@ -27,7 +27,7 @@ const Home = () => {
             <Link
               to={`/parkdetails/${park._id}`}
               key={park._id}
-              state={{ park: park }}
+              state={ park }
             >
               <h1>{park.name}</h1>
               <img src={`${park.picture_url}`} />
