@@ -65,6 +65,18 @@ const getParkById = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getRideByParkId = async (req, res) => {
+  try {
+    const { id } = req.params
+    const ride = await Ride.find({ park_id: `${id}` })
+    if (ride) {
+      return res.status(200).json({ ride })
+    }
+    return res.status(404).send('Ride with the specified name does not exists')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 module.exports = {
   createPark,
@@ -72,5 +84,6 @@ module.exports = {
   editPark,
   deletePark,
   getParkById,
-  createRide
+  createRide,
+  getRideByParkId
 }
