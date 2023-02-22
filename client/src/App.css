@@ -1,9 +1,9 @@
 .navbar{
-  background-color: rgb(58, 208, 98);
+  background-color: rgb(181, 181, 181);
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 body{
-  background: linear-gradient(to bottom, white, #ADD8E6  ) fixed;
+  background: linear-gradient(to bottom, white, #33b2dc  ) fixed;
 }
