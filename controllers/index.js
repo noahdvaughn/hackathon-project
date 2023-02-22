@@ -1,4 +1,5 @@
 const Park = require('../models/park')
+const Ride = require('../models/park')
 
 const createPark = async (req, res) => {
   try {
