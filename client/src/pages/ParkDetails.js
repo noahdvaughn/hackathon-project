@@ -40,7 +40,6 @@ const ParkDetails = ( ) => {
     //take out next line(http://localhost:3001)
     let res = await axios.get(`http://localhost:3001/api/get-ride-by-park-id/${park._id}`)
     setRides(res.data.ride)
-    console.log(rides);
   }
 
 
@@ -73,7 +72,7 @@ const ParkDetails = ( ) => {
                 <div key={oneRide._id} className='card'>
                     <p>{oneRide.name}</p>
                     <p>{oneRide.runtime}</p>
-                    <button className='delete' id='deleteRide' onClick={() => deleteRide(oneRide)}>Delete Ride</button>
+                    {/* <button className='delete' id='deleteRide' onClick={() => deleteRide(oneRide)}>Delete Ride</button> */}
                 </div>
             ))}
       </div>
