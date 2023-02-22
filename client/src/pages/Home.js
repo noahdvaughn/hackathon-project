@@ -23,6 +23,7 @@ const Home = () => {
     <div className="homeBody">
       {allParks &&
         allParks.map((park) => (
+
           <div>
             <Link
               to={`/parkdetails/${park._id}`}
@@ -33,9 +34,9 @@ const Home = () => {
               <img src={`${park.picture_url}`} />
             </Link>
           </div>
-
-        ))}
-    </div>
+    
+  ))}
+  </div>
   )
 }
 export default Home
