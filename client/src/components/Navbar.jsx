@@ -4,7 +4,10 @@ import '../App.css'
 const Navbar = () => {
   return (
     <div className='navbar'>
+      <div className='iconDiv'>
       <h3>Coding Coasters</h3>
+        <img  className='icon'src='https://cdn-icons-png.flaticon.com/512/106/106545.png'/>
+      </div>
         <Link to='/' ><h4>Home</h4></Link>
         <Link to='/create-park'><h4>Create Park</h4></Link>
     </div>

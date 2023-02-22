@@ -20,7 +20,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div>
+    <div className="homeBody">
       {allParks &&
         allParks.map((park) => (
           <div>
@@ -33,6 +33,7 @@ const Home = () => {
               <img src={`${park.picture_url}`} />
             </Link>
           </div>
+
         ))}
     </div>
   )
