@@ -1,9 +1,29 @@
 .navbar{
-  background-color: rgb(181, 181, 181);
+  background-color: rgb(237, 253, 255);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-bottom: solid #33b2dc ;
+  height: 8vh;
+  transition: all 0.4s;
+
+}
+.navbar:hover{
+  height: 10vh;
+  transition: all 0.4s;
 }
 body{
   background: linear-gradient(to bottom, white, #33b2dc  ) fixed;
+}
+h4{
+  color: #33b2dc;
+  text-decoration: underline;
+}
+h3{
+  color: #33b2dc;
+}
+.parkForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

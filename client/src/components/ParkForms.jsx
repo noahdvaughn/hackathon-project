@@ -36,7 +36,7 @@ const ParkForms = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="form">
+      <form onSubmit={handleSubmit} className="parkForm">
         <h1 >Create Park</h1>
         <input
           placeholder="Name"
