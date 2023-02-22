@@ -6,7 +6,6 @@ import Navbar from './components/Navbar'
 import ParkForms from './components/ParkForms'
 
 function App() {
-
   return (
     <div>
       <Navbar />
@@ -20,6 +19,5 @@ function App() {
     </div>
   )
 }
-
 
 export default App
