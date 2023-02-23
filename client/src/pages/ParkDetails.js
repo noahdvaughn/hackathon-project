@@ -11,8 +11,6 @@ const ParkDetails = () => {
 
   const [rides, setRides] = useState()
 
-  // const [park, setPark] = useState('')
-
   const [updatePark, setUpdatePark] = useState([])
 
   const [newRide, setNewRide] = useState({
@@ -21,13 +19,10 @@ const ParkDetails = () => {
     park_id: park._id
   })
 
-  //when able to pass props will pass park into parkDetails
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     await axios.post(`/api/create-ride/${park._id}`, newRide)
     getRides()
-    // console.log(park);
   }
 
   const handleChange = (event) => {
@@ -35,7 +30,6 @@ const ParkDetails = () => {
   }
 
   const getRides = async () => {
-    //take out next line(http://localhost:3001)
     let res = await axios.get(
       `http://localhost:3001/api/get-ride-by-park-id/${park._id}`
     )
@@ -47,17 +41,10 @@ const ParkDetails = () => {
     navigate('/')
   }
 
-  // const getOnePark = async () => {
-  //        const response = await axios.get(`/api/get-park/${park._id}`)
-  //         // setPark(response.data.park)
-  //         console.log(response);
-  // }
-
   const deleteRide = async (ride) => {
     await axios.delete(`/api/delete-ride/${ride._id}`)
     getRides()
-    //     await axios.delete(needs a new route if we use this function)
-    // getAllParks();
+   
   }
 
   if (rides && rides.length) {
@@ -68,7 +55,7 @@ const ParkDetails = () => {
   }
 
   useEffect(() => {
-    // getOnePark()
+    
     getRides()
   }, [])
 
