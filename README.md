@@ -25,11 +25,11 @@ Coding Coasters is an application that gives the user the ability to add differe
 
 ## Links to Socials
 
-[Noah Vaughn](https://www.linkedin.com/in/noahvaughn/)
-[Josh Curtis](https://www.linkedin.com/in/josh-curtis08/)
-[Dominic Fuentes](https://www.linkedin.com/in/dominicfuentes1/)
+- [Noah Vaughn](https://www.linkedin.com/in/noahvaughn/)
+- [Josh Curtis](https://www.linkedin.com/in/josh-curtis08/)
+- [Dominic Fuentes](https://www.linkedin.com/in/dominicfuentes1/)
 
 ## Credits
 
-[Understanding CRUD](https://geeksforgeeks.com/)
-[Using breakpoint on CSS](https://weekendprojects.dev/posts/which-responsive-media-query-breakpoints-should-you-use/)
+- [Understanding CRUD](https://geeksforgeeks.com/)
+- [Using breakpoint on CSS](https://weekendprojects.dev/posts/which-responsive-media-query-breakpoints-should-you-use/)
