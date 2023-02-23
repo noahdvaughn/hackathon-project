@@ -31,7 +31,8 @@ const ParkDetails = () => {
 
   const getRides = async () => {
     let res = await axios.get(
-      `http://localhost:3001/api/get-ride-by-park-id/${park._id}`
+      // Might need to add localhost://3001 due to unknown errors
+      `/api/get-ride-by-park-id/${park._id}`
     )
     setRides(res.data.ride)
   }
