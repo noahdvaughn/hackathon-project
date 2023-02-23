@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import Home from './Home'
 import axios from 'axios'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 
 const ParkDetails = ( ) => {
 
   const location = useLocation()
+  const navigate = useNavigate()
 
   const park = location.state
 
@@ -27,6 +28,7 @@ const ParkDetails = ( ) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await axios.post(`/api/create-ride/${park._id}`, newRide)
+    getRides()
     // console.log(park);
     }
 
@@ -44,7 +46,8 @@ const ParkDetails = ( ) => {
 
 
   const deletePark = async () => {
-          await axios.delete(`/delete-park/${park._id}`)
+          await axios.delete(`/api/delete-park/${park._id}`)
+          navigate('/')
        }
 
   // const getOnePark = async () => {
@@ -53,9 +56,12 @@ const ParkDetails = ( ) => {
   //         console.log(response);
   // }
 
-  const deleteRide = async () => {
+  const deleteRide = async (ride) => {
+    console.log(ride._id)
+          await axios.delete(`/api/delete-ride/${ride._id}`)
+          getRides()
   //     await axios.delete(needs a new route if we use this function)
-  //     getAllParks();
+      // getAllParks();
   }
 
   useEffect( () =>{
@@ -72,7 +78,7 @@ const ParkDetails = ( ) => {
                 <div key={oneRide._id} className='card'>
                     <p>{oneRide.name}</p>
                     <p>{oneRide.runtime}</p>
-                    {/* <button className='delete' id='deleteRide' onClick={() => deleteRide(oneRide)}>Delete Ride</button> */}
+                    <button className='delete' id='deleteRide' onClick={() => deleteRide(oneRide)}>Delete Ride</button>
                 </div>
             ))}
       </div>
@@ -89,9 +95,9 @@ const ParkDetails = ( ) => {
             type='text'
             placeholder='runtime'
             onChange={handleChange}/>
-            <button>Add Ride</button>
+            <button onClick={handleChange}>Add Ride</button>
       </form>
-      <button onClick={deletePark}>Delete Park</button>
+      <button onClick={() => deletePark(park._id)}>Delete Park</button>
     </div>
   )
 }
