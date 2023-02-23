@@ -30,12 +30,11 @@ const Home = () => {
             state={park}
             className="parkLink"
           >
-            <h1>{park.name}</h1>
+            <h2 className="parkTitle">{park.name}</h2>
             <img className="parkImage" src={`${park.picture_url}`} />
           </Link>
         ))}
     </div>
-
   )
 }
 export default Home
