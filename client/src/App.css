@@ -7,20 +7,53 @@
   border-bottom: solid #33b2dc ;
   height: 8vh;
   transition: all 0.4s;
+  
 }
 .navbar:hover{
   height: 10vh;
   transition: all 0.4s;
+}
+.navLink{
+  color: #33b2dc;
+  font-family: Brush Script MT;
+  font-size: 30px;
+}
+.pageTitle{
+    font-size: 40px;
+    left: 0;
+    top: 0;
+}
+input{
+    border-radius: 10px;
+}
+button{
+    border-radius: 10px;
+
 }
 .icon{
     max-width: 50px;
     padding-left: 10px;
     object-fit: contain;
 }
+.homeIcon{
+    max-width: 30px;
+    padding-left: 10px;
+
+    object-fit: contain;
+}
+.hammerIcon{
+    max-width: 40px;
+    padding-left: 10px;
+
+    object-fit: contain;
+
+}
 .iconDiv{
     display: flex;
     font-family: 'Lobster', cursive;
     font-size: large;
+  color: #33b2dc;
+
 }
 input{
     margin-bottom: 5px;
@@ -35,6 +68,53 @@ body{
     align-items: center;
     flex-wrap: nowrap;
 }
+.trashIcon{
+    max-width: 25px;
+    object-fit: contain;
+    padding: 5px;
+}
+.trashIcon:hover{
+    transform: scale(1.1);
+    /* border: 1px solid red; */
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+h1{
+    font-family: Brush Script MT;
+    font-size: 80px;
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* text-shadow: 0 0 40px #33b2dc; */
+    text-shadow: -5px 0 0px #33b2dc;
+    text-shadow: 5px 0 0px #33b2dc;
+    text-shadow: 0 -5px 0px #33b2dc;
+    text-shadow: 0 5px 0px #33b2dc;
+    color: white;
+}
+h2{
+  font-family: Brush Script MT;
+  color: black;
+  text-decoration: none;
+}
+.parkTitle{
+    font-size: 40px;
+}
+.parkLocation{
+    background-color: #33b2dc;
+    border-radius: 10px;
+    color: white;
+    font-family: Brush Script MT;
+
+}
+.detailsBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .parkLink{
     max-width: 50vw;
     display: flex;
@@ -43,6 +123,7 @@ body{
     justify-content: center;
     /* background-color: #33b2dc; */
     transition: all 0.3s;
+  text-decoration: none;
 
 }
 .parkLink:hover{
@@ -53,17 +134,54 @@ body{
     width: 50vw;
     border-radius: 40px;
 }
-h4{
-  color: #33b2dc;
-  text-decoration: underline;
+.detailsImage{
+    margin-top: 20px;
+    width: 60vw;
+    border-radius: 40px;
 }
-h3{
-  color: #33b2dc;
+.nameAndLocation{
+    margin-top: -165px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: white; */
+    border-radius: 40px;
+    /* position: relative; */
 }
+.rideListText, .createRideText{
+    color: white;
+    font-family: Brush Script MT;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+.rideListText{
+    margin-top: 0;
+}
+.rideListDiv{
+    margin-top: 10px;
+    /* border: 1px solid #1f728d; */
+    border-radius: 10px;
+    padding: 5px;
+}
+.runtime{
+    margin-left: 5px;
+}
+
 .parkForm{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.deleteParkButton{
+    margin-top: 10px;
+    background-color: rgb(218, 23, 23);
+    color: white;
+    opacity: 0.3;
+}
+.deleteParkButton:hover{
+    opacity: 1;
+    transform: scale(1.1);
+    font-weight: 900;
 }
 
 /* ----------- Google Pixel ----------- */
