@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const [allParks, setAllParks] = useState([])
@@ -23,20 +24,17 @@ const Home = () => {
     <div className="homeBody">
       {allParks &&
         allParks.map((park) => (
-
-          <div>
-            <Link
-              to={`/parkdetails/${park._id}`}
-              key={park._id}
-              state={ park }
-            >
-              <h1>{park.name}</h1>
-              <img src={`${park.picture_url}`} />
-            </Link>
-          </div>
-    
-  ))}
-  </div>
+          <Link
+            to={`/parkdetails/${park._id}`}
+            key={park._id}
+            state={park}
+            className="parkLink"
+          >
+            <h2 className="parkTitle">{park.name}</h2>
+            <img className="parkImage" src={`${park.picture_url}`} />
+          </Link>
+        ))}
+    </div>
   )
 }
 export default Home
