@@ -31,5 +31,6 @@ Coding Coasters is an application that gives the user the ability to add differe
 
 ## Credits
 
+- [Navigate on Heroku](https://hackathon-dom-josh-noah.herokuapp.com/)
 - [Understanding CRUD](https://geeksforgeeks.com/)
 - [Using breakpoint on CSS](https://weekendprojects.dev/posts/which-responsive-media-query-breakpoints-should-you-use/)
