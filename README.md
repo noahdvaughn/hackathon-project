@@ -8,8 +8,8 @@ Coding Coasters is an application that gives the user the ability to add differe
 
 - At the top of the Home page there's a *create parks* button that brings you to a different page so you can add the theme park you desire.
 - On the Home page you can scroll down to view existing theme parks, if you click on one it will display details for that park.
-- Inside a theme parks details you can add and delete rides.
-- If you are would like to go back to the Home page there is a home button at the top of every page.
+- Inside a theme *parks details* you can add and delete rides.
+- If you are would like to go back to the *Home page* there is a home button at the top of every page.
 
 ## Screenshots of application
 
