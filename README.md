@@ -3,9 +3,9 @@
 ## Description
 
 Coding Coasters is an application that gives the user the ability to add different theme parks from across the country. You can view existing theme parks and add rides to the theme park of your choice. If you come across a typo or wish to delete a ride or even an entire theme park, you are more than welcome to!
-![Trello Board](https://trello.com/b/IOIQ6f27/hackathon)
-![Planning Tool](https://lucid.app/lucidchart/ca00fa57-0458-4c56-9235-4efc69629e07/edit?invitationId=inv_38c59ad9-987d-4aa6-970e-80581a329b2d&page=0_0#)
-![Deployed App](https://hackathon-dom-josh-noah.herokuapp.com/)
+[Trello Board](https://trello.com/b/IOIQ6f27/hackathon)
+[Planning Tool](https://lucid.app/lucidchart/ca00fa57-0458-4c56-9235-4efc69629e07/edit?invitationId=inv_38c59ad9-987d-4aa6-970e-80581a329b2d&page=0_0#)
+[Deployed App](https://hackathon-dom-josh-noah.herokuapp.com/)
 
 
 ## Navigating 
